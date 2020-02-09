@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Location {
 
@@ -16,6 +18,7 @@ public class Location {
 	private int id;
 
 	@OneToMany(mappedBy = "location")
+	@JsonIgnore
 	private List<Flight> flights;
 
 	private String state;

@@ -29,7 +29,6 @@ public class Flight {
 	@Column(name = "drone_issues")
 	private String droneIssues;
 
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "location_id")
 	private Location location;

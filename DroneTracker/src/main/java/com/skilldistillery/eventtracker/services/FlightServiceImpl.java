@@ -34,31 +34,27 @@ public class FlightServiceImpl implements FlightService {
 	@Override
 	public Flight updateFlightById(Flight flight, int id) {
 		Optional<Flight> flightOptional = repo.findById(id);
-		Flight managedFlight = null;
 		if (flightOptional.isPresent()) {
-			managedFlight = flightOptional.get();
+			flight.setId(id);
+			System.out.println(flight);
+			repo.saveAndFlush(flight);
 		}
-		managedFlight = repo.saveAndFlush(flight);
-		return managedFlight;
+		return flight;
 	}
 
 	@Override
 	public boolean deleteFlightById(int id) {
-		boolean result = false;
+
 		Optional<Flight> flightOptional = repo.findById(id);
 		Flight managedFlight = null;
 		if (flightOptional.isPresent()) {
 			managedFlight = flightOptional.get();
 			repo.delete(managedFlight);
+			return true;
 		}
+		System.out.println(managedFlight);
 
-		if (managedFlight == null) {
-			result = true;
-		} else {
-			result = false;
-		}
-
-		return result;
+		return false;
 
 	}
 
