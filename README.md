@@ -22,3 +22,6 @@ MySQL to create the database
 
 
 ### Lessons Learned
+Learned how to implement REST and how it allowed me to work faster since basic CRUD operations come
+pre built into the program. I learned how to switch from useing DAO's and DAOIMPL's to now using Repository's
+Service's and ServiceIMPL's. I also learned how useful postman is in testing my rest end points.
