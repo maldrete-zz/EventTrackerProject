@@ -62,7 +62,7 @@ public class FlightController {
 		return updatedflight;
 	}
 
-	@DeleteMapping("flight/{id}")
+	@DeleteMapping("d")
 	public boolean deletePost(@PathVariable Integer id, HttpServletResponse resp) {
 		boolean deleted = svc.deleteFlightById(id);
 		if (deleted) {

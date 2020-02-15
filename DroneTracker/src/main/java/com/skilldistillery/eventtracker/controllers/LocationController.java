@@ -10,8 +10,8 @@ import com.skilldistillery.eventtracker.services.LocationServiceImpl;
 @RequestMapping
 public class LocationController {
 	
-	@Autowired
-	LocationServiceImpl svc;
+//	@Autowired
+//	LocationServiceImpl svc;
 	
 	
 }
