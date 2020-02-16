@@ -1,5 +1,7 @@
 package com.skilldistillery.eventtracker.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,6 +48,25 @@ public class FlightController {
 			response.setStatus(200);
 			StringBuffer url = request.getRequestURL();
 			url.append("/").append(flight.getId());
+			String location = url.toString();
+			response.addHeader("Location", location);
+			return createdFlight;
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.setStatus(400);
+			return null;
+		}
+	}
+	
+	@GetMapping("flight")
+	public List<Flight> AllFlight(HttpServletRequest request, HttpServletResponse response) {
+
+		try {
+			List<Flight> createdFlight = svc.findAllFlights();
+			
+			response.setStatus(200);
+			StringBuffer url = request.getRequestURL();
+			url.append("/").append(createdFlight.get(0).getId());
 			String location = url.toString();
 			response.addHeader("Location", location);
 			return createdFlight;

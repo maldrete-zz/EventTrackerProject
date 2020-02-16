@@ -2,32 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>REST Video Store</title>
+<title>Drone</title>
 </head>
-<body>
+<body style="background-color: grey;">
   <h1>Drone Flight Tracker</h1>
 
   <form name="flightForm">
     <input type="number" name="flightId">
     <button name="lookup">Get Drone Flight by Id</button>
+    
     <!-- <button id='btnCreate' type="button">Create Flight</button> -->
-  </form><br>
+  </form>
+  <br>
 
 <form name="addflightForm">
   Aircraft <input type="text" name=aircraft><br>
-  Weather<input type="text" name="weather">
-  flight Time<input type="text" name="flightTime">
-  Difficulty Level <input type="text" name="difficultyLevel">
-  Terrain <input type="text" name="terrain">
-  Drone Issues <input type="text" name="droneIssues">
-  Location <input type="number" name="location">
+  Weather<input type="text" name="weather"><br>
+  Flight Time<input type="text" name="flightTime"><br>
+  Difficulty Level <input type="text" name="difficultyLevel"><br>
+  Terrain <input type="text" name="terrain"><br>
+  Drone Issues <input type="text" name="droneIssues"><br>
+  Location <input type="number" name="location"><br>
   <button name="createFlight">Create a Flight</button>
 </form>
 
-  <div id="output">
+	<br>
+  	<div id="flightTable"> </div>
     <div id="flightData"></div><br>
-    <!-- <div id="createFlight"></div> -->
-  </div>
+    <div id="updateFlight"></div>
+
 
 
 </body>
